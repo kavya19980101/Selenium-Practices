@@ -34,6 +34,6 @@ public static final String ACCESS_KEY="PDnTspzUfBetqyssJEMA";
         driver.get("https://app.vwo.com");
         String title=driver.getTitle();
         System.out.println(title);
-      //  driver.quit();
+      driver.quit();
     }
 }
