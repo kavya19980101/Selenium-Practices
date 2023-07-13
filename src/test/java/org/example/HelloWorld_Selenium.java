@@ -35,6 +35,6 @@ public class HelloWorld_Selenium {
         driver.get("https://app.vwo.com");
         String title=driver.getTitle();
         System.out.println(title);
-        driver.quit();;
+        driver.quit();
     }
 }
