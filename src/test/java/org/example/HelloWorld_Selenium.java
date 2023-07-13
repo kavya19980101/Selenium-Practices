@@ -16,9 +16,10 @@ import java.util.HashMap;
 
 public class HelloWorld_Selenium {
 
-public static final String USERNAME="kavyas_OjNri8";
-public static final String ACCESS_KEY="PDnTspzUfBetqyssJEMA";
-    public static final String url="https//:" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    public static final String USERNAME = "kavyas_OjNri8";
+    public static final String AUTOMATE_KEY = "PDnTspzUfBetqyssJEMA";
+    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+
     @Test
     public static void Hello_test() throws MalformedURLException {
         MutableCapabilities capabilities = new MutableCapabilities();
@@ -30,7 +31,7 @@ public static final String ACCESS_KEY="PDnTspzUfBetqyssJEMA";
         browserstackOptions.put("local", "false");
         browserstackOptions.put("seleniumVersion", "4.9.1");
         capabilities.setCapability("bstack:options", browserstackOptions);
-        WebDriver driver=new RemoteWebDriver(new URL(url), capabilities);
+        WebDriver driver=new RemoteWebDriver(new URL(URL), capabilities);
         driver.get("https://app.vwo.com");
         String title=driver.getTitle();
         System.out.println(title);
