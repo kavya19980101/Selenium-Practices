@@ -14,6 +14,8 @@ public class Pageloadstrategy {
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         WebDriver driver=new ChromeDriver(options);
         driver.get("https://app.vwo.com");
+        driver.close();//Will close the current window and session remain same..will get ->invalid session id
+        driver.quit();//Will close all the windows and session=null..will get-> session is nulll error
         String title=driver.getTitle();
        System.out.println(title);
 
