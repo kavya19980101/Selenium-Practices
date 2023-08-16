@@ -6,9 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class LoginPageTC {
         WebDriver driver;
@@ -120,7 +125,7 @@ public class LoginPageTC {
         Username.sendKeys("kav62367@!%$@^&");
         Password.sendKeys("Hari@20010110");
         submitbutton.click();
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println(NotificationError.getText());
         Assert.assertEquals(NotificationError.getText(), "Your email, password, IP address or location did not match");
 
@@ -241,7 +246,7 @@ public class LoginPageTC {
 
 
     }
-    @Description("Verify that, User are not able to login with username that contains a mix of valid and a alphanumeric characters password")
+    @Description("Verify that, User are not able to login with valid username and  alphanumeric characters password")
     @Test(priority = 15, groups = "negative")
     public void TestNegative15() throws InterruptedException {
         driver.get("https://app.vwo.com");

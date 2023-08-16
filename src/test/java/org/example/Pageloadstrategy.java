@@ -2,6 +2,7 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,6 +12,7 @@ public class Pageloadstrategy {
     @Test
     public static void Page()
     {
+
         ChromeOptions options=new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.addArguments("start-maximized");
@@ -23,7 +25,8 @@ public class Pageloadstrategy {
        driver.findElement(By.xpath("//*[@id=\"login-username\"]")).sendKeys("kavyashekarvijaya@gmail.com");
         driver.findElement(By.xpath("//*[@id=\"login-password\"]")).sendKeys("Hari@20010110");
         driver.findElement(By.xpath("//*[@id=\"js-login-btn\"]")).click();
-       String url=driver.getCurrentUrl();
+     // driver.findElement(By.)
+        String url=driver.getCurrentUrl();
         System.out.println("The URL of the Dashboard "+url);
     }
 }
